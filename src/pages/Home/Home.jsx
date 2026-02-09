@@ -3,7 +3,7 @@ import workList from "../../data/workList";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import HeroImg from "/home/Hero_img2.jpg"
+import HeroImg from "../../assets/Hero_img2.jpg"
 
 import AnimatedCopy from "../../components/AnimatedCopy/AnimatedCopy";
 import Reviews from "../../components/Reviews/Reviews";

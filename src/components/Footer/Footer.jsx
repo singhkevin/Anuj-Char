@@ -52,7 +52,7 @@ const Footer = () => {
 
         <div className="footer-copyright-line">
           <p className="primary sm footer-row-bottom-title">&copy; Anuj Char 2025</p>
-          <p className="primary sm footer-row-bottom-title">Designed & Developed by Viral Inbound</p>
+          <p className="primary sm footer-row-bottom-title">Designed & Developed by Kevin Singh</p>
         </div>
       </div>
     </div>
