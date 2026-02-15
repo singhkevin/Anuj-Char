@@ -37,11 +37,6 @@ const Footer = () => {
             <span>Contact</span>
             <span>&#8594;</span>
           </Link>
-
-          <Link to="/faq" className="footer-nav-item">
-            <span>FAQ</span>
-            <span>&#8594;</span>
-          </Link>
         </div>
       </div>
       <div className="footer-row" id="footer-row-bottom">
