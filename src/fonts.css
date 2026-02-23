@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Messina Sans Mono";
+  src: url("/fonts/messina-sans-mono/MessinaSansMono-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Messina Sans Mono";
+  src: url("/fonts/messina-sans-mono/MessinaSansMono-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Messina Sans Mono";
+  src: url("/fonts/messina-sans-mono/MessinaSansMono-Book.otf") format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Messina Sans Mono";
+  src: url("/fonts/messina-sans-mono/MessinaSansMono-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Messina Sans Mono";
+  src: url("/fonts/messina-sans-mono/MessinaSansMono-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Messina Sans Mono";
+  src: url("/fonts/messina-sans-mono/MessinaSansMono-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
