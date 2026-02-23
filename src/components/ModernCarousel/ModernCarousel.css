@@ -1,5 +1,9 @@
 .modern-carousel-container {
+<<<<<<< HEAD
     padding: 60px 0;
+=======
+    padding: 100px 0;
+>>>>>>> origin/main
     background: transparent;
     width: 100%;
     overflow: hidden;
@@ -164,6 +168,7 @@
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     background: rgba(255, 255, 255, 0.2);
+<<<<<<< HEAD
 }
 
 .modern-carousel-cta {
@@ -213,4 +218,6 @@
         padding: 12px 24px;
         font-size: 0.9rem;
     }
+=======
+>>>>>>> origin/main
 }

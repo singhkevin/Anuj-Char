@@ -37,11 +37,6 @@ const Footer = () => {
             <span>Contact</span>
             <span>&#8594;</span>
           </Link>
-
-          <Link to="/faq" className="footer-nav-item">
-            <span>FAQ</span>
-            <span>&#8594;</span>
-          </Link>
         </div>
       </div>
       <div className="footer-row" id="footer-row-bottom">
@@ -52,7 +47,7 @@ const Footer = () => {
 
         <div className="footer-copyright-line">
           <p className="primary sm footer-row-bottom-title">&copy; Anuj Char 2025</p>
-          <p className="primary sm footer-row-bottom-title">Designed & Developed by Viral Inbound</p>
+          <p className="primary sm footer-row-bottom-title">Designed & Developed by Kevin Singh</p>
         </div>
       </div>
     </div>

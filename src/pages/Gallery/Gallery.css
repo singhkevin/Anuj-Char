@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .gallery-page {
     width: 100%;
     background: transparent;
@@ -177,4 +178,8 @@
     .gallery-hero {
         height: 50svh;
     }
+=======
+.gallery {
+    width: 100%;
+>>>>>>> origin/main
 }
