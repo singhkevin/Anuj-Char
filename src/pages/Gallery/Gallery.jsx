@@ -1,26 +1,15 @@
 import React from "react";
 import "./Gallery.css";
-<<<<<<< HEAD
 import galleryData from "../../data/galleryData";
 import AnimatedCopy from "../../components/AnimatedCopy/AnimatedCopy";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Footer from "../../components/Footer/Footer";
 import ReactLenis from "lenis/react";
-=======
-
-import Gallery3 from "../../components/Gallery2/Gallery3";
-import ContactForm from "../../components/ContactForm/ContactForm";
-import Footer from "../../components/Footer/Footer";
-
-import ReactLenis from "lenis/react";
-
->>>>>>> origin/main
 import Transition from "../../components/Transition/Transition";
 
 const Gallery = () => {
     return (
         <ReactLenis root>
-<<<<<<< HEAD
             <div className="gallery-page">
                 <section className="gallery-hero">
                     <div className="hero-content">
@@ -71,10 +60,6 @@ const Gallery = () => {
                     </div>
                 </section>
 
-=======
-            <div className="page gallery">
-                <Gallery3 />
->>>>>>> origin/main
                 <ContactForm />
                 <Footer />
             </div>
