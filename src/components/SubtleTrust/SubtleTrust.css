@@ -99,7 +99,7 @@
     width: 10px;
     height: 10px;
     background: var(--fg);
-    opacity: 0.15;
+    opacity: 0.4;
     transition: all 0.3s ease;
 }
 

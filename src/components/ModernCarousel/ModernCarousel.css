@@ -1,9 +1,5 @@
 .modern-carousel-container {
-<<<<<<< HEAD
     padding: 60px 0;
-=======
-    padding: 100px 0;
->>>>>>> origin/main
     background: transparent;
     width: 100%;
     overflow: hidden;
@@ -20,6 +16,8 @@
     /* Text black as requested */
     text-transform: uppercase;
     letter-spacing: 4px;
+    text-indent: 4px;
+    /* Compensate for letter-spacing to center perfectly */
     font-family: 'BankGothic', sans-serif;
     /* Project standard font */
 }
@@ -137,8 +135,8 @@
 
 /* Custom Swiper Styles */
 .swiper-pagination-bullet {
-    background: #fff !important;
-    opacity: 0.2;
+    background: #000 !important;
+    opacity: 0.3;
     transition: all 0.3s ease;
 }
 
@@ -150,13 +148,13 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: #fff !important;
-    background: rgba(255, 255, 255, 0.1);
+    color: #000 !important;
+    background: rgba(0, 0, 0, 0.05);
     width: 50px !important;
     height: 50px !important;
     border-radius: 50% !important;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .swiper-button-next::after,
@@ -167,8 +165,7 @@
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background: rgba(255, 255, 255, 0.2);
-<<<<<<< HEAD
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .modern-carousel-cta {
@@ -218,6 +215,4 @@
         padding: 12px 24px;
         font-size: 0.9rem;
     }
-=======
->>>>>>> origin/main
 }
