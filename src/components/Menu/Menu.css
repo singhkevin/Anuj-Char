@@ -193,12 +193,10 @@
   left: 0;
   width: calc(100% - 4em);
   height: calc(100svh - 4em);
-  /* Liquid Glass Effect */
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  /* Solid Dark Overlay */
+  background: rgba(10, 10, 10, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -225,7 +223,7 @@
 
 .menu-link-item .menu-link-item-holder a {
   position: relative;
-  color: #000;
+  color: #fff;
   font-family: "BankGothic";
   font-size: 7vw;
   text-transform: uppercase;
@@ -235,7 +233,7 @@
 }
 
 .menu-link-item .menu-link-item-holder:hover a {
-  color: rgb(67, 67, 67);
+  color: #cccccc;
 }
 
 @media (max-width: 1000px) {
