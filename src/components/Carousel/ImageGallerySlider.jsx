@@ -9,24 +9,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const slides = [
   {
-    title: "/home/carousel-1-min.JPG",
-    image: "/home/carousel-1-min.JPG",
+    title: "/home/carousel-1-min.jpg",
+    image: "/home/carousel-1-min.jpg",
   },
   {
     title: "/home/carousel-2-min.jpg",
     image: "/home/carousel-2-min.jpg",
   },
   {
-    title: "/home/carousel-3-min.JPG",
-    image: "/home/carousel-3-min.JPG",
+    title: "/home/carousel-3-min.jpg",
+    image: "/home/carousel-3-min.jpg",
   },
   {
-    title: "/home/carousel-4-min.jpg",
-    image: "/home/carousel-4-min.jpg",
+    title: "/home/carousel-4-min.png",
+    image: "/home/carousel-4-min.png",
   },
   {
-    title: "/home/carousel-5-min.JPG",
-    image: "/home/carousel-5-min.JPG",
+    title: "/home/carousel-5-min.jpg",
+    image: "/home/carousel-5-min.jpg",
   },
 ];
 
