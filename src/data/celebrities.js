@@ -3,7 +3,7 @@ const celebrities = [
         id: 1,
         name: "Harsha Bhogle",
         event: "Cricket Event",
-        image: "/home/carousel-4-min.jpg",
+        image: "/home/carousel-4-min.png",
     },
     {
         id: 2,
@@ -15,19 +15,19 @@ const celebrities = [
         id: 3,
         name: "Sunil Grover",
         event: "Corporate Comedy Night",
-        image: "/home/carousel-3-min.JPG",
+        image: "/home/carousel-3-min.jpg",
     },
     {
         id: 4,
         name: "Dia Mirza",
         event: "Sustainability Awards",
-        image: "/home/carousel-1-min.JPG",
+        image: "/home/carousel-1-min.jpg",
     },
     {
         id: 5,
         name: "Terence Lewis",
         event: "Dance Reality Show Finale",
-        image: "/home/carousel-5-min.JPG",
+        image: "/home/carousel-5-min.jpg",
     },
     {
         id: 6,
@@ -45,13 +45,13 @@ const celebrities = [
         id: 8,
         name: "Ranveer Singh",
         event: "Brand Launch Event",
-        image: "/home/carousel-8-min.JPG",
+        image: "/home/carousel-8-min.jpg",
     },
     {
         id: 9,
         name: "Priyanka Chopra",
         event: "Global Gala Dinner",
-        image: "/home/carousel-1-min.JPG",
+        image: "/home/carousel-1-min.jpg",
     },
     {
         id: 10,

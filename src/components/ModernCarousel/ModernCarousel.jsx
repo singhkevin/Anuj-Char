@@ -13,7 +13,7 @@ import "./ModernCarousel.css";
 const slides = [
     {
         id: 1,
-        image: "/home/carousel-4-min.jpg",
+        image: "/home/carousel-4-min.png",
         title: "Cricket Event with Harsha Bhogle",
     },
     {
@@ -23,22 +23,22 @@ const slides = [
     },
     {
         id: 3,
-        image: "/home/carousel-3-min.JPG",
+        image: "/home/carousel-3-min.jpg",
         title: "The Times of India Business Award",
     },
     {
         id: 4,
-        image: "/home/carousel-1-min.JPG",
+        image: "/home/carousel-1-min.jpg",
         title: "Times Leader of Tommorrow Event",
     },
     {
         id: 5,
-        image: "/home/carousel-5-min.JPG",
+        image: "/home/carousel-5-min.jpg",
         title: "Qualcomm Event",
     },
     {
         id: 6,
-        image: "/home/carousel-6-min.JPG",
+        image: "/home/carousel-6-min.jpg",
         title: "Anchoring at Qualcomm Event",
     },
     {
@@ -48,7 +48,7 @@ const slides = [
     },
     {
         id: 8,
-        image: "/home/carousel-8-min.JPG",
+        image: "/home/carousel-8-min.jpg",
         title: "Times's Leaders of Tomorrow",
     }
 ];
