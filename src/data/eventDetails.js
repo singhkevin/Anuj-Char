@@ -14,9 +14,9 @@ const eventDetails = {
         subtitle: "Professionalism Meets Energy",
         description: "Elevate your business gatherings with a host who understands the balance between professional decorum and engaging entertainment. Perfect for product launches, award ceremonies, and conferences.",
         images: [
-            "/home/carousel-4-min.jpg",
+            "/home/carousel-4-min.png",
             "/home/carousel-5-min.jpg",
-            "/home/carousel-6-min.jpg",
+            "/home/carousel-6-min.JPG",
         ]
     },
     "social-events": {
@@ -35,8 +35,8 @@ const eventDetails = {
         description: "Bringing the roar of the stadium to your event. With high energy and play-by-play excitement, I keep the crowd on their feet and the adrenaline pumping.",
         images: [
             "/home/carousel-2-min.jpg",
-            "/home/carousel-4-min.jpg",
-            "/home/carousel-6-min.jpg",
+            "/home/carousel-4-min.png",
+            "/home/carousel-6-min.JPG",
         ]
     },
     "voices": {
@@ -55,7 +55,7 @@ const eventDetails = {
         description: "Whether it's a high-fashion editorial or a commercial shoot, I bring a professional demeanor and a focus on capturing the perfect moment.",
         images: [
             "/home/carousel-2-min.jpg",
-            "/home/carousel-4-min.jpg",
+            "/home/carousel-4-min.png",
             "/home/carousel-7-min.jpg",
         ]
     }

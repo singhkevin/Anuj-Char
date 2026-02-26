@@ -38,7 +38,7 @@ const slides = [
     },
     {
         id: 6,
-        image: "/home/carousel-6-min.jpg",
+        image: "/home/carousel-6-min.JPG",
         title: "Anchoring at Qualcomm Event",
     },
     {
