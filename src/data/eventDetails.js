@@ -16,7 +16,7 @@ const eventDetails = {
         images: [
             "/home/carousel-4-min.png",
             "/home/carousel-5-min.jpg",
-            "/home/carousel-6-min.JPG",
+            "/home/carousel-6-min.jpg",
         ]
     },
     "social-events": {
@@ -36,7 +36,7 @@ const eventDetails = {
         images: [
             "/home/carousel-2-min.jpg",
             "/home/carousel-4-min.png",
-            "/home/carousel-6-min.JPG",
+            "/home/carousel-6-min.jpg",
         ]
     },
     "voices": {

@@ -133,7 +133,7 @@ const Menu = () => {
         <div className="menu-bar-container">
           <div className="menu-logo" onClick={closeMenu}>
             <Link to="/">
-              <img src="/home/Black Logo.png" className="menu-logo-img"></img>
+              <img src="/home/black-logo.png" className="menu-logo-img"></img>
             </Link>
           </div>
           <div className="menu-actions">

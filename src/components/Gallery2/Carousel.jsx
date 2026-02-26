@@ -34,7 +34,7 @@ const slides = [
   },
   {
     id: 6,
-    image: "/home/carousel-6-min.JPG",
+    image: "/home/carousel-6-min.jpg",
     title: "Anchoring at Qualcomm Event",
     text: "This is the third slide"
   },

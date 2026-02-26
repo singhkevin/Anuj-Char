@@ -33,7 +33,7 @@ const celebrities = [
         id: 6,
         name: "Amitabh Bachchan",
         event: "Tech Summit Keynote",
-        image: "/home/carousel-6-min.JPG",
+        image: "/home/carousel-6-min.jpg",
     },
     {
         id: 7,

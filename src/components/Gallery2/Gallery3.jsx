@@ -54,7 +54,7 @@ function Gallery3() {
         <Carousel.Item>
           <img
             className="carousel-img"
-            src="/home/carousel-6-min.JPG"
+            src="/home/carousel-6-min.jpg"
             alt="Second slide"
           />
         </Carousel.Item>
