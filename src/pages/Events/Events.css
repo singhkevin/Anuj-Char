@@ -1,12 +1,16 @@
 .events-hub-page {
-    padding-top: 100px;
+    padding-top: 0;
     width: 100%;
 }
 
 .events-hero {
-    padding: 6em 2em;
+    padding: 3em 2em;
     text-align: center;
     background-color: var(--bg);
+}
+
+.events-hero-content {
+    padding: 0 15%;
 }
 
 .events-hero-content h1 {
@@ -65,15 +69,15 @@
 }
 
 .events-grid-section {
-    padding: 6em 2em;
+    padding: 2em 2em;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3em;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
 }
 
 .event-card {
@@ -94,7 +98,7 @@
 
 .event-card-image {
     position: relative;
-    height: 400px;
+    height: 180px;
     overflow: hidden;
 }
 
@@ -139,7 +143,7 @@
 }
 
 .event-card-info {
-    padding: 2em;
+    padding: 1.25em;
 }
 
 .event-card-title-row {
@@ -150,7 +154,7 @@
 }
 
 .event-card-info h4 {
-    font-size: 1.8rem;
+    font-size: 1.25rem;
     color: var(--fg);
 }
 
@@ -194,6 +198,12 @@
 }
 
 @media (max-width: 1000px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
     .events-grid {
         grid-template-columns: 1fr;
     }

@@ -1,32 +1,38 @@
 .gallery-page {
     width: 100%;
+    padding-top: 0;
     background: transparent;
 }
 
 /* Hero Section */
 .gallery-hero {
-    height: 40svh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 3em 2em;
     text-align: center;
-    background: radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.4) 0%, transparent 80%);
-    color: var(--fg);
-    padding: 0 2em;
+    background-color: var(--bg);
+}
+
+
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15%;
 }
 
 .gallery-hero h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-family: 'BankGothic', sans-serif;
-    margin-bottom: 0.25em;
+    font-size: 8vw;
+    margin-bottom: 0.2em;
+    color: black;
 }
 
 .gallery-hero p {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-size: 2.5vw;
+    color: var(--fg);
     opacity: 0.7;
-    max-width: 600px;
+    font-family: "Messina Sans Mono";
+    text-transform: none;
+    max-width: none;
+    margin: 0 auto;
 }
 
 /* Common Section Styles */
