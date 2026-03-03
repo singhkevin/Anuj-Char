@@ -13,22 +13,22 @@ const galleryData = {
     videos: [
         {
             id: 1,
-            url: "https://www.youtube.com/embed/Z-r7Ly_nAuk?si=7I-GtGDoc9oMVww8",
+            url: "https://www.youtube.com/embed/Z-r7Ly_nAuk?rel=0&modestbranding=1",
             title: "Fairplay Grand Finale 2024"
         },
         {
             id: 2,
-            url: "https://www.youtube.com/embed/eWY9AvvNpAo?si=agNGeH6r7BFmgrmG",
+            url: "https://www.youtube.com/embed/eWY9AvvNpAo?rel=0&modestbranding=1",
             title: "Carnival Craze Highlights"
         },
         {
             id: 3,
-            url: "https://www.youtube.com/embed/XH3rJE6MBcM?si=GR3tt4BQzrVv9l8",
+            url: "https://www.youtube.com/embed/XH3rJE6MBcM?rel=0&modestbranding=1",
             title: "Myntra Confluence Event"
         },
         {
             id: 4,
-            url: "https://www.youtube.com/embed/fyla3m6wtY4?si=qq15wDRup-2kJjBj",
+            url: "https://www.youtube.com/embed/fyla3m6wtY4?rel=0&modestbranding=1",
             title: "Times Health Icons"
         }
     ]
