@@ -9,25 +9,22 @@ const ContactForm = () => {
           <p className="primary sm">Let’s create together</p>
         </div>
         <div className="contact-form-row-copy-item">
-          <p className="primary sm">(Scene — 07)</p>
-        </div>
-        <div className="contact-form-row-copy-item">
-          <p className="primary sm">&copy; 2025</p>
+          <p className="primary sm">&copy; 2026</p>
         </div>
       </div>
 
       <div className="contact-form-row">
         <div className="contact-form-col">
           <div className="contact-form-header">
-            <h3>Start a Conversation</h3>
+            <h3>Award-Winning Energy</h3>
 
             <p>
-            Planning an event or show? Let’s make it unforgettable. I’d love to hear your vision and explore how we can work together.
+              Planning an event or show? Let’s make it unforgettable. I’d love to hear your vision and explore how we can work together.
             </p>
           </div>
 
           <div className="contact-form-availability">
-            <p className="primary sm">Available for Freelance</p>
+            <p className="primary sm">Taking up projects WORLDWIDE</p>
             <p className="primary sm">Clients worldwide</p>
           </div>
         </div>
