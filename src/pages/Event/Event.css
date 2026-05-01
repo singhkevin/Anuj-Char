@@ -137,6 +137,130 @@
     padding-bottom: 4em;
 }
 
+.event-videos-section {
+    padding: 4em;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 2em;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    font-family: 'BankGothic', sans-serif;
+    margin-bottom: 0.5em;
+    letter-spacing: 2px;
+    color: var(--fg);
+}
+
+.header-line {
+    width: 60px;
+    height: 4px;
+    background: var(--fg);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    max-width: 1200px;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background: #000;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.video-custom-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-content {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    width: 100%;
+}
+
+.play-button {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.play-button svg {
+    width: 28px;
+    height: 28px;
+    margin-left: 4px;
+}
+
+.overlay-content h3 {
+    color: #fff;
+    font-family: 'BankGothic', sans-serif;
+    font-size: clamp(1rem, 1.4vw, 1.5rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+.video-wrapper:hover .video-thumb {
+    transform: scale(1.05);
+    opacity: 0.6;
+}
+
+.video-wrapper:hover .play-button {
+    transform: scale(1.1);
+    background: #fff;
+    color: #000;
+}
+
+/* Scroll Hijack Fix */
+.is-scrolling iframe {
+    pointer-events: none;
+}
+
 @media (max-width: 1024px) {
     .event-image-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -159,8 +283,14 @@
         gap: 1.5em;
     }
 
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
     .event-grid-section,
-    .event-details {
+    .event-details,
+    .event-videos-section {
         padding: 2em;
     }
 }

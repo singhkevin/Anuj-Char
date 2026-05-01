@@ -1,188 +1,210 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./About.css";
+import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ReactLenis, { useLenis } from "lenis/react";
 
 import AnimatedCopy from "../../components/AnimatedCopy/AnimatedCopy";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Footer from "../../components/Footer/Footer";
-
-import ReactLenis from "lenis/react";
-
 import Transition from "../../components/Transition/Transition";
+import { FiArrowUpRight } from "react-icons/fi";
+import galleryData from "../../data/galleryData";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const ScrollFix = () => {
+    useLenis(({ isScrolling }) => {
+        if (isScrolling) {
+            document.body.classList.add("is-scrolling");
+        } else {
+            document.body.classList.remove("is-scrolling");
+        }
+    });
+    return null;
+};
+
+const VideoCard = ({ vid, isBento = true }) => {
+    const [isPlaying, setIsPlaying] = React.useState(false);
+
+    // Extract YouTube ID to get thumbnail
+    const getYouTubeId = (url) => {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+    };
+
+    const videoId = getYouTubeId(vid.url);
+    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+    return (
+        <div className={`video-item ${isPlaying ? 'is-playing' : ''} ${isBento ? 'bento-video' : ''}`}>
+            <div className="video-wrapper" onClick={() => setIsPlaying(true)}>
+                {!isPlaying ? (
+                    <div className="video-custom-overlay">
+                        <img src={thumbnailUrl} alt={vid.title} className="video-thumb" />
+                        <div className="overlay-content">
+                            <div className="play-button">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 6L17 12L7 18V6Z" fill="currentColor" />
+                                </svg>
+                            </div>
+                            <h3>{vid.title}</h3>
+                        </div>
+                    </div>
+                ) : (
+                    <iframe
+                        src={`${vid.url}${vid.url.includes('?') ? '&' : '?'}autoplay=1`}
+                        title={vid.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                    ></iframe>
+                )}
+            </div>
+        </div>
+    );
+};
 
 const About = () => {
+  const imgs = galleryData.images;
+  const vids = galleryData.videos;
+
+  useEffect(() => {
+    // Staggered reveal for bento items
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray(".bento-item");
+      items.forEach((item) => {
+        gsap.fromTo(
+          item,
+          { y: 50, opacity: 0, scale: 0.95 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+            },
+          }
+        );
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <ReactLenis root>
-      <div className="page about">
-        <section className="about-header">
-          <h1>Est</h1>
-          <h1>1997</h1>
-        </section>
-
-        <section className="about-hero">
-          <div className="about-hero-img">
-            <img src="/about/about-hero.jpg" alt="" />
-          </div>
-        </section>
-
-        <section className="about-me-copy">
-          <div className="about-me-copy-wrapper">
-            <AnimatedCopy animateOnScroll={true} tag="h3">
-              I'm Nico Palmer — a filmmaker drawn to human stories, quiet
-              moments, and the visual language of emotion. My work spans short
-              films, experimental pieces, and cinematic visuals.
+      <ScrollFix />
+      <div className="page about-v2">
+        {/* NEW HEADER */}
+        <section className="about-v2-header">
+          <div className="header-container">
+            <AnimatedCopy tag="h1" delay={0.2}>
+              Anuj Char
             </AnimatedCopy>
-
-            <AnimatedCopy animateOnScroll={true} tag="h3">
-              For me, filmmaking isn’t just about images — it’s about what those
-              images make us feel. I believe in subtlety, texture, and honesty
-              in storytelling.
-            </AnimatedCopy>
-
-            <AnimatedCopy animateOnScroll={true} tag="h3">
-              Every project is a new collaboration, a new challenge, and a new
-              chance to create something meaningful. If it moves someone, even
-              for a second — it's done its job.
+            <AnimatedCopy tag="h2" delay={0.4}>
+              Master of Ceremonies
             </AnimatedCopy>
           </div>
         </section>
 
-        <section className="services">
-          <div className="services-col">
-            <div className="services-banner">
-              <img src="/about/services-banner.jpg" alt="" />
+        {/* BENTO GRID */}
+        <section className="bento-container">
+          <div className="bento-grid">
+            
+            {/* ROW 1 & 2 */}
+            <div className="bento-item bento-bio bento-col-2 bento-row-2">
+              <AnimatedCopy tag="h3">
+                International, award-winning, multi-lingual host.
+              </AnimatedCopy>
+              <p>
+                With an uncanny ability to captivate audiences, Anuj brings energy, charisma, and unmatched professionalism to every stage. From grand corporate summits to intimate social gatherings, every event is a new stage, a new energy, and a chance to create something unforgettable.
+              </p>
             </div>
-            <p className="primary">Crafted with Intention</p>
-          </div>
-          <div className="services-col">
-            <h4>
-              Every project is a chance to explore new visual language, push
-              creative boundaries, and tell stories that feel real. I approach
-              each film with care, precision, and purpose.
-            </h4>
 
-            <div className="services-list">
-              <div className="service-list-row">
-                <div className="service-list-col">
-                  <h5>Filmmaking</h5>
-                </div>
-                <div className="service-list-col">
-                  <p>
-                    From short films to personal narratives, my work is driven
-                    by emotion and atmosphere. I handle direction,
-                    cinematography, and editing — crafting each piece with a
-                    filmmaker’s eye for mood, movement, and meaning.
-                  </p>
-                </div>
-              </div>
-
-              <div className="service-list-row">
-                <div className="service-list-col">
-                  <h5>Visual Storytelling</h5>
-                </div>
-                <div className="service-list-col">
-                  <p>
-                    I create visuals that speak — whether it’s a quiet moment or
-                    a bold idea. My work blends aesthetic choices with story
-                    clarity, making sure the emotional core always comes
-                    through.
-                  </p>
-                </div>
-              </div>
-
-              <div className="service-list-row">
-                <div className="service-list-col">
-                  <h5>Creative Direction</h5>
-                </div>
-                <div className="service-list-col">
-                  <p>
-                    From ideation to final cut, I guide the visual and narrative
-                    tone of every project. I bring a cohesive, cinematic vision
-                    that aligns story, style, and intention — grounded in
-                    authenticity.
-                  </p>
-                </div>
-              </div>
+            <div className="bento-item bento-img bento-col-1 bento-row-2">
+              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Stage Presence" />
             </div>
-          </div>
-        </section>
 
-        <section className="about-banner-img">
-          <div className="about-banner-img-wrapper">
-            <img src="/about/about-banner.jpg" alt="" />
-          </div>
-        </section>
-
-        <section className="fav-tools">
-          <div className="fav-tools-header">
-            <AnimatedCopy tag="p" animateOnScroll={true} className="primary sm">
-              Daily Stack
-            </AnimatedCopy>
-            <AnimatedCopy tag="h2" animateOnScroll={true} delay={0.25}>
-              Favourite Tools
-            </AnimatedCopy>
-            <AnimatedCopy
-              tag="p"
-              animateOnScroll={true}
-              className="secondary"
-              delay={0.5}
-            >
-              My favorite stack includes Framer, Figma, and other cutting-edge
-              technologies to ensure seamless and dynamic designs.
-            </AnimatedCopy>
-          </div>
-
-          <div className="fav-tools-list">
-            <div className="fav-tools-list-row">
-              <div className="fav-tool">
-                <div className="fav-tool-img">
-                  <img src="/about/tool-1.jpg" alt="" />
-                </div>
-                <h4>DaVinci Resolve</h4>
-                <p className="primary sm">Color Grading</p>
-              </div>
-              <div className="fav-tool">
-                <div className="fav-tool-img">
-                  <img src="/about/tool-2.jpg" alt="" />
-                </div>
-                <h4>Adobe Premiere Pro</h4>
-                <p className="primary sm">Video Editing</p>
-              </div>
-              <div className="fav-tool">
-                <div className="fav-tool-img">
-                  <img src="/about/tool-3.jpg" alt="" />
-                </div>
-                <h4>Blackmagic Pocket</h4>
-                <p className="primary sm">Cinematic Shooting</p>
-              </div>
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[1]?.url || "/home/carousel-1-min.jpg"} alt="Highlight" />
             </div>
-            <div className="fav-tools-list-row">
-              <div className="fav-tool">
-                <div className="fav-tool-img">
-                  <img src="/about/tool-4.jpg" alt="" />
-                </div>
-                <h4>ShotDeck</h4>
-                <p className="primary sm">Visual References</p>
-              </div>
-              <div className="fav-tool">
-                <div className="fav-tool-img">
-                  <img src="/about/tool-5.jpg" alt="" />
-                </div>
-                <h4>Frame.io</h4>
-                <p className="primary sm">Remote Collaboration</p>
-              </div>
-              <div className="fav-tool">
-                <div className="fav-tool-img">
-                  <img src="/about/tool-6.jpg" alt="" />
-                </div>
-                <h4>Celtx</h4>
-                <p className="primary sm">Scriptwriting Tool</p>
-              </div>
+
+            <div className="bento-item bento-expertise bento-col-1 bento-row-1">
+              <h4>Expertise</h4>
+              <ul>
+                <li>Weddings & Socials</li>
+                <li>Corporate Events</li>
+                <li>Sports Events</li>
+                <li>Shoots & Voices</li>
+              </ul>
             </div>
+
+            {/* ROW 3 & 4 */}
+            <div className="bento-item bento-vid bento-col-2 bento-row-2">
+              {vids[0] && <VideoCard vid={vids[0]} />}
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[2]?.url || "/home/carousel-2-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[3]?.url || "/home/carousel-3-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-2 bento-row-1">
+              <img src={imgs[8]?.url || "/home/carousel-4-min.png"} alt="Event Highlight" />
+            </div>
+
+            {/* ROW 5 & 6 */}
+            <div className="bento-item bento-vid bento-col-2 bento-row-1">
+               {vids[1] && <VideoCard vid={vids[1]} />}
+            </div>
+            
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[4]?.url || "/home/carousel-5-min.jpg"} alt="Event Highlight" />
+            </div>
+            
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[5]?.url || "/home/carousel-6-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            {/* ROW 6 & 7 */}
+            <div className="bento-item bento-img bento-col-1 bento-row-2">
+              <img src={imgs[6]?.url || "/home/carousel-7-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-vid bento-col-2 bento-row-2">
+              {vids[2] && <VideoCard vid={vids[2]} />}
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[7]?.url || "/home/carousel-8-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Event Highlight" />
+            </div>
+
+            {/* ROW 8 & 9 */}
+            <div className="bento-item bento-vid bento-col-2 bento-row-2">
+               {vids[3] && <VideoCard vid={vids[3]} />}
+            </div>
+
+            <div className="bento-item bento-vid bento-col-2 bento-row-2">
+               {vids[4] && <VideoCard vid={vids[4]} />}
+            </div>
+
           </div>
         </section>
 
         <ContactForm />
-
         <Footer />
       </div>
     </ReactLenis>

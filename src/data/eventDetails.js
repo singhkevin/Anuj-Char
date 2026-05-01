@@ -1,12 +1,18 @@
 const eventDetails = {
-    weddings: {
-        title: "Weddings",
-        subtitle: "Creating Timeless Memories",
-        description: "Every love story is unique, and your wedding should be too. I bring energy, romance, and smooth coordination to your big day, ensuring every moment from the grand entrance to the final dance is unforgettable.",
+    "weddings-and-social-events": {
+        title: "Weddings & Social Events",
+        subtitle: "Creating Timeless Celebrations",
+        description: "From the grand romance of weddings to the high energy of social gatherings, I bring a unique blend of elegance and excitement to every celebration. Whether it's a couple's big day or a milestone party, I ensure every moment is filled with joy, connection, and unforgettable memories.",
         images: [
             "/home/carousel-1-min.jpg",
             "/home/carousel-2-min.jpg",
-            "/home/carousel-3-min.jpg",
+            "/home/carousel-7-min.jpg",
+            "/home/carousel-8-min.jpg",
+        ],
+        videos: [
+            { id: 2, url: "https://www.youtube.com/embed/eWY9AvvNpAo", title: "High Tempo High Energy Carnival Craze!" },
+            { id: 3, url: "https://www.youtube.com/embed/ifMC9ap4K9A", title: "Fitness and Life advice from Bollywood Legend Anil Kapoor!" },
+            { id: 4, url: "https://www.youtube.com/embed/Qs2OtcXFC4E", title: "Learning some moves from Kiara Advani!" }
         ]
     },
     "corporate-events": {
@@ -17,16 +23,11 @@ const eventDetails = {
             "/home/carousel-4-min.png",
             "/home/carousel-5-min.jpg",
             "/home/carousel-6-min.jpg",
-        ]
-    },
-    "social-events": {
-        title: "Social Events",
-        subtitle: "The Life of the Party",
-        description: "From birthdays to anniversaries, I ensure your social gathering is filled with laughter, interaction, and great vibes. Let's make it a celebration to remember!",
-        images: [
-            "/home/carousel-7-min.jpg",
-            "/home/carousel-8-min.jpg",
-            "/home/carousel-1-min.jpg",
+        ],
+        videos: [
+            { id: 1, url: "https://www.youtube.com/embed/Z-r7Ly_nAuk", title: "Salesforce Lead India Grand Finale" },
+            { id: 5, url: "https://www.youtube.com/embed/CgcXYy5yhJ0", title: "Infosys Convergence" },
+            { id: 7, url: "https://www.youtube.com/embed/rjb7H8fSnfg", title: "Tech Conference Highlights" }
         ]
     },
     "sports-events": {
@@ -37,6 +38,9 @@ const eventDetails = {
             "/home/carousel-2-min.jpg",
             "/home/carousel-4-min.png",
             "/home/carousel-6-min.jpg",
+        ],
+        videos: [
+            { id: 8, url: "https://www.youtube.com/embed/c7akZOWneyc", title: "RCB Event Highlights" }
         ]
     },
     "voices": {
@@ -47,6 +51,9 @@ const eventDetails = {
             "/home/carousel-1-min.jpg",
             "/home/carousel-3-min.jpg",
             "/home/carousel-5-min.jpg",
+        ],
+        videos: [
+            { id: 6, url: "https://www.youtube.com/embed/eRmJM-KXTLQ", title: "AMAT Conference VO" }
         ]
     },
     "shoots": {
@@ -57,6 +64,9 @@ const eventDetails = {
             "/home/carousel-2-min.jpg",
             "/home/carousel-4-min.png",
             "/home/carousel-7-min.jpg",
+        ],
+        videos: [
+            { id: 4, url: "https://www.youtube.com/embed/Qs2OtcXFC4E", title: "Shoot with Kiara Advani" }
         ]
     }
 };

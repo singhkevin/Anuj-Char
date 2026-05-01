@@ -379,9 +379,9 @@ const Home = () => {
 
         <section className="hobbies">
           <div className="hobby">
-            <Link to="/events/weddings" className="hobby-link">
+            <Link to="/events/weddings-and-social-events" className="hobby-link">
               <AnimatedCopy tag="h4" animateOnScroll={true}>
-                WEDDINGS
+                WEDDINGS & SOCIAL EVENTS
               </AnimatedCopy>
               <FiArrowUpRight className="hobby-icon" />
             </Link>
@@ -390,14 +390,6 @@ const Home = () => {
             <Link to="/events/corporate-events" className="hobby-link">
               <AnimatedCopy tag="h4" animateOnScroll={true}>
                 CORPORATE EVENTS
-              </AnimatedCopy>
-              <FiArrowUpRight className="hobby-icon" />
-            </Link>
-          </div>
-          <div className="hobby">
-            <Link to="/events/social-events" className="hobby-link">
-              <AnimatedCopy tag="h4" animateOnScroll={true}>
-                SOCIAL EVENTS
               </AnimatedCopy>
               <FiArrowUpRight className="hobby-icon" />
             </Link>
