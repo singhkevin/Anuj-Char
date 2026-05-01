@@ -17,7 +17,7 @@ const SubtleTrust = () => {
     return (
         <section className="subtle-trust-section">
             <div className="subtle-trust-header">
-                <AnimatedCopy tag="h2">Celebrities We Have Worked With</AnimatedCopy>
+                <AnimatedCopy tag="h2">STINTS WITH STARS!</AnimatedCopy>
                 <p>Moments of connection and energy, captured across diverse stages.</p>
             </div>
 

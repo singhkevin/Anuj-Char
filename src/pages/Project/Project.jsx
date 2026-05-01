@@ -27,7 +27,7 @@ const Project = () => {
 
         <section className="project-banner-img">
           <div className="project-banner-img-wrapper">
-            <ParallaxImage src="/project/banner.jpg" alt="" />
+            <ParallaxImage src="/project-images/banner.jpg" alt="" />
           </div>
         </section>
 
@@ -84,31 +84,31 @@ const Project = () => {
           <div className="project-images-container">
             <div className="project-img">
               <div className="project-img-wrapper">
-                <ParallaxImage src="/project/project-1.jpg" alt="" />
+                <ParallaxImage src="/project-images/project-1.jpg" alt="" />
               </div>
             </div>
 
             <div className="project-img">
               <div className="project-img-wrapper">
-                <ParallaxImage src="/project/project-2.jpg" alt="" />
+                <ParallaxImage src="/project-images/project-2.jpg" alt="" />
               </div>
             </div>
 
             <div className="project-img">
               <div className="project-img-wrapper">
-                <ParallaxImage src="/project/project-3.jpg" alt="" />
+                <ParallaxImage src="/project-images/project-3.jpg" alt="" />
               </div>
             </div>
 
             <div className="project-img">
               <div className="project-img-wrapper">
-                <ParallaxImage src="/project/project-4.jpg" alt="" />
+                <ParallaxImage src="/project-images/project-4.jpg" alt="" />
               </div>
             </div>
 
             <div className="project-img">
               <div className="project-img-wrapper">
-                <ParallaxImage src="/project/project-5.jpg" alt="" />
+                <ParallaxImage src="/project-images/project-5.jpg" alt="" />
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ const Project = () => {
 
           <div className="next-project-img">
             <div className="next-project-img-wrapper">
-              <ParallaxImage src="/work/work-2.jpg" alt="" />
+              <ParallaxImage src="/work-images/work-2.jpg" alt="" />
             </div>
           </div>
 

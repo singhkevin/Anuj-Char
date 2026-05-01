@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-contact">
           <h3>
             Let’s Collaborate <br />
-            mc@anujchar.com
+            <a href="mailto:mc@anujchar.com" style={{ color: "inherit", textDecoration: "none" }}>mc@anujchar.com</a>
           </h3>
 
           <p className="secondary">
@@ -37,6 +37,16 @@ const Footer = () => {
             <span>Contact</span>
             <span>&#8594;</span>
           </Link>
+
+          <a href="https://www.instagram.com/anujchar/" target="_blank" rel="noreferrer" className="footer-nav-item">
+            <span>Instagram</span>
+            <span>&#8599;</span>
+          </a>
+
+          <a href="https://www.youtube.com/@AnujChar" target="_blank" rel="noreferrer" className="footer-nav-item">
+            <span>YouTube</span>
+            <span>&#8599;</span>
+          </a>
         </div>
       </div>
       <div className="footer-row" id="footer-row-bottom">

@@ -8,6 +8,7 @@ const ContactForm = () => {
         <div className="contact-form-row-copy-item">
           <p className="primary sm">Let’s create together</p>
         </div>
+        <div className="contact-form-row-copy-item"></div>
         <div className="contact-form-row-copy-item">
           <p className="primary sm">&copy; 2026</p>
         </div>
@@ -26,6 +27,12 @@ const ContactForm = () => {
           <div className="contact-form-availability">
             <p className="primary sm">Taking up projects WORLDWIDE</p>
             <p className="primary sm">Clients worldwide</p>
+          </div>
+
+          <div style={{ display: "flex", gap: "1em", marginTop: "1em", flexWrap: "wrap" }}>
+            <a href="https://www.instagram.com/anujchar/" target="_blank" rel="noreferrer" className="btn" style={{ padding: "0.5em 1em", fontSize: "0.9rem", textDecoration: "none" }}>Instagram</a>
+            <a href="https://www.youtube.com/@AnujChar" target="_blank" rel="noreferrer" className="btn" style={{ padding: "0.5em 1em", fontSize: "0.9rem", textDecoration: "none" }}>YouTube</a>
+            <a href="mailto:mc@anujchar.com" className="btn" style={{ padding: "0.5em 1em", fontSize: "0.9rem", textDecoration: "none" }}>Email</a>
           </div>
         </div>
 

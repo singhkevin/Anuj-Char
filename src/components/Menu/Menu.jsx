@@ -162,6 +162,24 @@ const Menu = () => {
                 </div>
               ))}
             </div>
+
+            <div className="menu-socials" style={{ marginTop: "4em", display: "flex", gap: "2em", justifyContent: "center" }}>
+              <div className="menu-link-item" style={{ padding: 0 }}>
+                <div className="menu-link-item-holder">
+                  <a href="https://www.instagram.com/anujchar/" target="_blank" rel="noreferrer" style={{ color: "#fff", textDecoration: "none", fontFamily: "Inter, sans-serif", fontSize: "1rem", letterSpacing: "1px", textTransform: "uppercase" }}>Instagram</a>
+                </div>
+              </div>
+              <div className="menu-link-item" style={{ padding: 0 }}>
+                <div className="menu-link-item-holder">
+                  <a href="https://www.youtube.com/@AnujChar" target="_blank" rel="noreferrer" style={{ color: "#fff", textDecoration: "none", fontFamily: "Inter, sans-serif", fontSize: "1rem", letterSpacing: "1px", textTransform: "uppercase" }}>YouTube</a>
+                </div>
+              </div>
+              <div className="menu-link-item" style={{ padding: 0 }}>
+                <div className="menu-link-item-holder">
+                  <a href="mailto:mc@anujchar.com" style={{ color: "#fff", textDecoration: "none", fontFamily: "Inter, sans-serif", fontSize: "1rem", letterSpacing: "1px", textTransform: "uppercase" }}>Email</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
