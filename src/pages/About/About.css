@@ -101,11 +101,6 @@
   color: var(--bg);
   opacity: 0.8;
   line-height: 1.5;
-  margin-bottom: 1em;
-}
-
-.bento-bio p:last-child {
-  margin-bottom: 0;
 }
 
 /* EXPERTISE BLOCK */
@@ -156,43 +151,6 @@
 /* VIDEO BLOCKS */
 .bento-vid {
   padding: 0; /* Remove padding for video cards */
-}
-
-/* NEW CONTENT BLOCKS */
-.bento-stars,
-.bento-inspiration {
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 3em;
-  text-align: left;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.02);
-  transition: all 0.4s ease;
-}
-
-.bento-stars:hover,
-.bento-inspiration:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.bento-stars h4,
-.bento-inspiration h4 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--fg);
-  margin-bottom: 1em;
-  opacity: 0.6;
-}
-
-.bento-stars p,
-.bento-inspiration p {
-  font-size: clamp(16px, 1.2vw, 18px);
-  line-height: 1.6;
-  color: var(--fg);
-  opacity: 0.9;
 }
 
 .bento-video {
@@ -340,5 +298,71 @@
 
   .bento-bio {
     padding: 2em;
+  }
+}
+
+/* BEYOND THE MIC */
+.bento-beyond {
+  padding: 3em;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.beyond-content h3 {
+  font-size: clamp(24px, 3vw, 40px);
+  margin-bottom: 0.8em;
+  color: var(--fg);
+}
+
+.beyond-content p {
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  opacity: 0.7;
+  margin-bottom: 1em;
+}
+
+/* VALUES BLOCK */
+.bento-values {
+  padding: 3em;
+  background-color: var(--fg); /* Punchy background */
+}
+
+.values-content {
+  width: 100%;
+}
+
+.values-content h3 {
+  font-size: clamp(24px, 3vw, 40px);
+  margin-bottom: 1.5em;
+  color: var(--bg);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+
+.value-item h4 {
+  font-size: 1.2rem;
+  color: var(--bg);
+  margin-bottom: 0.4em;
+  text-transform: uppercase;
+}
+
+.value-item p {
+  font-size: 0.9rem;
+  color: var(--bg);
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
   }
 }

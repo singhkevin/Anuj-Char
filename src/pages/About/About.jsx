@@ -120,22 +120,19 @@ const About = () => {
             {/* ROW 1 & 2 */}
             <div className="bento-item bento-bio bento-col-2 bento-row-2">
               <AnimatedCopy tag="h3">
-                Anchor All The Way
+                International, award-winning, multi-lingual host.
               </AnimatedCopy>
               <p>
-                Anuj Char is a professional emcee, anchor, and event host based in Bengaluru and Mumbai. With a career spanning over 10 years and 1000+ shows globally, the stage is his second home. He eats, sleeps, and breathes events.
-              </p>
-              <p>
-                His repertoire includes everything from high-stakes corporate conferences and gala dinners to music concerts, fashion shows, and luxury weddings.
+                With an uncanny ability to captivate audiences, Anuj brings energy, charisma, and unmatched professionalism to every stage. From grand corporate summits to intimate social gatherings, every event is a new stage, a new energy, and a chance to create something unforgettable.
               </p>
             </div>
 
             <div className="bento-item bento-img bento-col-1 bento-row-2">
-              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Anuj Char on Stage" />
+              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Stage Presence" />
             </div>
 
             <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[1]?.url || "/home/carousel-1-min.jpg"} alt="Live Performance" />
+              <img src={imgs[1]?.url || "/home/carousel-1-min.jpg"} alt="Highlight" />
             </div>
 
             <div className="bento-item bento-expertise bento-col-1 bento-row-1">
@@ -144,7 +141,7 @@ const About = () => {
                 <li>Weddings & Socials</li>
                 <li>Corporate Events</li>
                 <li>Sports Events</li>
-                <li>Theater & Voice Overs</li>
+                <li>Shoots & Voices</li>
               </ul>
             </div>
 
@@ -153,11 +150,16 @@ const About = () => {
               {vids[0] && <VideoCard vid={vids[0]} />}
             </div>
 
-            <div className="bento-item bento-stars bento-col-2 bento-row-1">
-              <h4>Stints with Stars</h4>
-              <p>
-                Anuj has shared the stage and energy with Bollywood legends like Amitabh Bachchan, Vidya Balan, Anil Kapoor, Anupam Kher, Raveena Tandon, and Kiara Advani.
-              </p>
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[2]?.url || "/home/carousel-2-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[3]?.url || "/home/carousel-3-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-2 bento-row-1">
+              <img src={imgs[8]?.url || "/home/carousel-4-min.png"} alt="Event Highlight" />
             </div>
 
             {/* ROW 5 & 6 */}
@@ -171,13 +173,6 @@ const About = () => {
             
             <div className="bento-item bento-img bento-col-1 bento-row-1">
               <img src={imgs[5]?.url || "/home/carousel-6-min.jpg"} alt="Event Highlight" />
-            </div>
-
-            <div className="bento-item bento-inspiration bento-col-2 bento-row-1">
-              <h4>Inspired by Greatness</h4>
-              <p>
-                A massive Shah Rukh Khan fan, Anuj takes inspiration from King Khan's unparalleled stage presence and hopes to host alongside his mentor one day.
-              </p>
             </div>
 
             {/* ROW 6 & 7 */}
@@ -204,6 +199,43 @@ const About = () => {
 
             <div className="bento-item bento-vid bento-col-2 bento-row-2">
                {vids[4] && <VideoCard vid={vids[4]} />}
+            </div>
+
+            {/* NEW SECTIONS: BEYOND THE MIC & VALUES */}
+            <div className="bento-item bento-beyond bento-col-2 bento-row-2">
+              <div className="beyond-content">
+                <AnimatedCopy tag="h3">Beyond the Mic</AnimatedCopy>
+                <p>
+                  I started with a simple belief: every story, every brand, every moment deserves to be heard. From my early days to becoming an award-winning host, it’s been a journey of curiosity and commitment.
+                </p>
+                <p>
+                  For me, it’s not just about speaking—it’s about listening, connecting, and bringing people together. I believe in the power of shared experiences and the magic that happens when everyone is truly present.
+                </p>
+              </div>
+            </div>
+
+            <div className="bento-item bento-values bento-col-2 bento-row-2">
+              <div className="values-content">
+                <AnimatedCopy tag="h3">Core Values</AnimatedCopy>
+                <div className="values-grid">
+                  <div className="value-item">
+                    <h4>Energy</h4>
+                    <p>Bringing high-octane vibrance to every stage.</p>
+                  </div>
+                  <div className="value-item">
+                    <h4>Empathy</h4>
+                    <p>Understanding the pulse of the audience.</p>
+                  </div>
+                  <div className="value-item">
+                    <h4>Connection</h4>
+                    <p>Creating bridges between brands and people.</p>
+                  </div>
+                  <div className="value-item">
+                    <h4>Excellence</h4>
+                    <p>A relentless pursuit of perfection in every performance.</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
