@@ -121,12 +121,22 @@
   will-change: transform, opacity;
   z-index: 56;
   color: #000000;
+  width: 70%;
+  font-size: clamp(32px, 5vw, 70px);
+  line-height: 1.1;
   /* Multi-layered shadow to hug character edges and pop against 3D model */
   text-shadow:
     0 0 10px rgba(255, 255, 255, 0.8),
     0 0 20px rgba(255, 255, 255, 0.5),
     0 0 40px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .sticky-titles h2 {
+    width: 90%;
+    font-size: clamp(28px, 8vw, 60px);
+  }
 }
 
 .sticky-work-header {

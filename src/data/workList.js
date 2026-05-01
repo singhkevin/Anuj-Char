@@ -1,39 +1,51 @@
 const workList = [
   {
     id: 1,
-    title: "Grand Finale of Salesforce Lead India 2024",
+    title: "Grand Finale of Salesforce Lead India",
     category: "Corporate Event",
-    image: "https://www.youtube.com/embed/Z-r7Ly_nAuk?rel=0&modestbranding=1",
+    image: "https://www.youtube.com/embed/Z-r7Ly_nAuk",
   },
   {
     id: 2,
     title: "High Tempo High Energy Carnival Craze!",
     category: "Social Event",
-    image: "https://www.youtube.com/embed/eWY9AvvNpAo?rel=0&modestbranding=1",
+    image: "https://www.youtube.com/embed/eWY9AvvNpAo",
   },
   {
     id: 3,
-    title: "Myntra Confluence Event",
+    title: "Fitness and Life advice from Bollywood Legend Anil Kapoor!",
     category: "Corporate Event",
-    image: "https://www.youtube.com/embed/XH3rJE6MBcM?rel=0&modestbranding=1",
+    image: "https://www.youtube.com/embed/ifMC9ap4K9A",
   },
   {
     id: 4,
-    title: "Times Health Icons, Bhubneshwar",
+    title: "Learning some moves from the first class girl KIARA ADVANI herself!",
     category: "Corporate Event",
-    image: "https://www.youtube.com/embed/fyla3m6wtY4?rel=0&modestbranding=1",
+    image: "https://www.youtube.com/embed/Qs2OtcXFC4E",
   },
   {
     id: 5,
-    title: "One Zeiss Awards Event",
+    title: "INFOSYS CONVERGENCE",
     category: "Corporate Event",
-    image: "https://www.youtube.com/embed/Rw2GNZRR1MM?rel=0&modestbranding=1",
+    image: "https://www.youtube.com/embed/CgcXYy5yhJ0",
   },
   {
     id: 6,
-    title: "Birla RCB Event",
+    title: "AMAT Conference.",
     category: "Corporate Event",
-    image: "https://player.vimeo.com/video/1144424453?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    image: "https://www.youtube.com/embed/eRmJM-KXTLQ",
+  },
+  {
+    id: 7,
+    title: "Cohosting for a Tech Conference",
+    category: "Corporate Event",
+    image: "https://www.youtube.com/embed/rjb7H8fSnfg",
+  },
+  {
+    id: 8,
+    title: "RCB Event",
+    category: "Corporate Event",
+    image: "https://www.youtube.com/embed/c7akZOWneyc",
   },
 
 ];

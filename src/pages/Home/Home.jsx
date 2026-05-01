@@ -121,8 +121,6 @@ const Home = () => {
       return;
     }
 
-
-
     gsap.set(titles[0], { opacity: 1, scale: 1 });
     gsap.set(titles[1], { opacity: 0, scale: 0.75 });
     gsap.set(titles[2], { opacity: 0, scale: 0.75 });
@@ -157,7 +155,6 @@ const Home = () => {
         },
         1
       )
-
       .to(
         titles[1],
         {
@@ -316,11 +313,12 @@ const Home = () => {
             shadow-softness="0.9"
           ></model-viewer>
           <h2 ref={(el) => (titlesRef.current[0] = el)}>
-            I craft moments that captivate audiences with live energy and charisma.</h2>
+            I am an International, award-winning, multi-lingual host that </h2>
           <h2 ref={(el) => (titlesRef.current[1] = el)}>
-            Each event is driven by connection, spontaneity, and unforgettable presence.</h2>
+            captivates audiences attention with energy and charisma!
+          </h2>
           <h2 ref={(el) => (titlesRef.current[2] = el)}>
-            This portfolio is a glimpse into the stages that ignite me.
+            This portfolio is a glimpse into my world!
           </h2>
         </section>
 

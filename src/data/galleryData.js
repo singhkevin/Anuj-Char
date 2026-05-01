@@ -13,23 +13,43 @@ const galleryData = {
     videos: [
         {
             id: 1,
-            url: "https://www.youtube.com/embed/Z-r7Ly_nAuk?rel=0&modestbranding=1",
-            title: "Fairplay Grand Finale 2024"
+            url: "https://www.youtube.com/embed/Z-r7Ly_nAuk",
+            title: "Grand Finale of Salesforce Lead India"
         },
         {
             id: 2,
-            url: "https://www.youtube.com/embed/eWY9AvvNpAo?rel=0&modestbranding=1",
-            title: "Carnival Craze Highlights"
+            url: "https://www.youtube.com/embed/eWY9AvvNpAo",
+            title: "High Tempo High Energy Carnival Craze!"
         },
         {
             id: 3,
-            url: "https://www.youtube.com/embed/XH3rJE6MBcM?rel=0&modestbranding=1",
-            title: "Myntra Confluence Event"
+            url: "https://www.youtube.com/embed/ifMC9ap4K9A",
+            title: "Fitness and Life advice from Bollywood Legend Anil Kapoor!"
         },
         {
             id: 4,
-            url: "https://www.youtube.com/embed/fyla3m6wtY4?rel=0&modestbranding=1",
-            title: "Times Health Icons"
+            url: "https://www.youtube.com/embed/Qs2OtcXFC4E",
+            title: "Learning some moves from the first class girl KIARA ADVANI herself!"
+        },
+        {
+            id: 5,
+            url: "https://www.youtube.com/embed/CgcXYy5yhJ0",
+            title: "INFOSYS CONVERGENCE"
+        },
+        {
+            id: 6,
+            url: "https://www.youtube.com/embed/eRmJM-KXTLQ",
+            title: "AMAT Conference."
+        },
+        {
+            id: 7,
+            url: "https://www.youtube.com/embed/rjb7H8fSnfg",
+            title: "Cohosting for a Tech Conference"
+        },
+        {
+            id: 8,
+            url: "https://www.youtube.com/embed/c7akZOWneyc",
+            title: "RCB Event"
         }
     ]
 };
