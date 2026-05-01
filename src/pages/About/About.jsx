@@ -28,7 +28,6 @@ const ScrollFix = () => {
 const VideoCard = ({ vid, isBento = true }) => {
     const [isPlaying, setIsPlaying] = React.useState(false);
 
-    // Extract YouTube ID to get thumbnail
     const getYouTubeId = (url) => {
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
         const match = url.match(regExp);
@@ -70,9 +69,9 @@ const VideoCard = ({ vid, isBento = true }) => {
 const About = () => {
   const imgs = galleryData.images;
   const vids = galleryData.videos;
+  const newImage = "/about-assets/IMG-20230321-WA0027(1).jpg";
 
   useEffect(() => {
-    // Staggered reveal for bento items
     const ctx = gsap.context(() => {
       const items = gsap.utils.toArray(".bento-item");
       items.forEach((item) => {
@@ -101,7 +100,6 @@ const About = () => {
     <ReactLenis root>
       <ScrollFix />
       <div className="page about-v2">
-        {/* NEW HEADER */}
         <section className="about-v2-header">
           <div className="header-container">
             <AnimatedCopy tag="h1" delay={0.2}>
@@ -113,26 +111,21 @@ const About = () => {
           </div>
         </section>
 
-        {/* BENTO GRID */}
         <section className="bento-container">
           <div className="bento-grid">
             
-            {/* ROW 1 & 2 */}
-            <div className="bento-item bento-bio bento-col-2 bento-row-2">
+            {/* ROW 1 & 2: PRIMARY INTRO */}
+            <div className="bento-item bento-bio bento-col-3 bento-row-2">
               <AnimatedCopy tag="h3">
                 International, award-winning, multi-lingual host.
               </AnimatedCopy>
               <p>
-                With an uncanny ability to captivate audiences, Anuj brings energy, charisma, and unmatched professionalism to every stage. From grand corporate summits to intimate social gatherings, every event is a new stage, a new energy, and a chance to create something unforgettable.
+                With an uncanny ability to captivate audiences, Anuj brings energy, charisma, and unmatched professionalism to every stage. From grand corporate summits to intimate social gatherings.
               </p>
             </div>
 
-            <div className="bento-item bento-img bento-col-1 bento-row-2">
-              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Stage Presence" />
-            </div>
-
             <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[1]?.url || "/home/carousel-1-min.jpg"} alt="Highlight" />
+              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Stage Presence" />
             </div>
 
             <div className="bento-item bento-expertise bento-col-1 bento-row-1">
@@ -145,63 +138,7 @@ const About = () => {
               </ul>
             </div>
 
-            {/* ROW 3 & 4 */}
-            <div className="bento-item bento-vid bento-col-2 bento-row-2">
-              {vids[0] && <VideoCard vid={vids[0]} />}
-            </div>
-
-            <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[2]?.url || "/home/carousel-2-min.jpg"} alt="Event Highlight" />
-            </div>
-
-            <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[3]?.url || "/home/carousel-3-min.jpg"} alt="Event Highlight" />
-            </div>
-
-            <div className="bento-item bento-img bento-col-2 bento-row-1">
-              <img src={imgs[8]?.url || "/home/carousel-4-min.png"} alt="Event Highlight" />
-            </div>
-
-            {/* ROW 5 & 6 */}
-            <div className="bento-item bento-vid bento-col-2 bento-row-1">
-               {vids[1] && <VideoCard vid={vids[1]} />}
-            </div>
-            
-            <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[4]?.url || "/home/carousel-5-min.jpg"} alt="Event Highlight" />
-            </div>
-            
-            <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[5]?.url || "/home/carousel-6-min.jpg"} alt="Event Highlight" />
-            </div>
-
-            {/* ROW 6 & 7 */}
-            <div className="bento-item bento-img bento-col-1 bento-row-2">
-              <img src={imgs[6]?.url || "/home/carousel-7-min.jpg"} alt="Event Highlight" />
-            </div>
-
-            <div className="bento-item bento-vid bento-col-2 bento-row-2">
-              {vids[2] && <VideoCard vid={vids[2]} />}
-            </div>
-
-            <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[7]?.url || "/home/carousel-8-min.jpg"} alt="Event Highlight" />
-            </div>
-
-            <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Event Highlight" />
-            </div>
-
-            {/* ROW 8 & 9 */}
-            <div className="bento-item bento-vid bento-col-2 bento-row-2">
-               {vids[3] && <VideoCard vid={vids[3]} />}
-            </div>
-
-            <div className="bento-item bento-vid bento-col-2 bento-row-2">
-               {vids[4] && <VideoCard vid={vids[4]} />}
-            </div>
-
-            {/* NEW SECTIONS: BEYOND THE MIC & VALUES */}
+            {/* ROW 3 & 4: BEYOND THE MIC INTEGRATION */}
             <div className="bento-item bento-beyond bento-col-2 bento-row-2">
               <div className="beyond-content">
                 <AnimatedCopy tag="h3">Beyond the Mic</AnimatedCopy>
@@ -214,7 +151,16 @@ const About = () => {
               </div>
             </div>
 
-            <div className="bento-item bento-values bento-col-2 bento-row-2">
+            <div className="bento-item bento-vid bento-col-2 bento-row-2">
+              {vids[0] && <VideoCard vid={vids[0]} />}
+            </div>
+
+            {/* ROW 5 & 6: VALUES INTEGRATION */}
+            <div className="bento-item bento-img bento-col-1 bento-row-2">
+              <img src={newImage} alt="Newspaper Coverage" />
+            </div>
+
+            <div className="bento-item bento-values bento-col-3 bento-row-2">
               <div className="values-content">
                 <AnimatedCopy tag="h3">Core Values</AnimatedCopy>
                 <div className="values-grid">
@@ -236,6 +182,48 @@ const About = () => {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* ADDITIONAL HIGHLIGHTS */}
+            <div className="bento-item bento-vid bento-col-2 bento-row-1">
+               {vids[1] && <VideoCard vid={vids[1]} />}
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[2]?.url || "/home/carousel-2-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[3]?.url || "/home/carousel-3-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-vid bento-col-2 bento-row-2">
+              {vids[2] && <VideoCard vid={vids[2]} />}
+            </div>
+
+            <div className="bento-item bento-img bento-col-2 bento-row-1">
+              <img src={imgs[8]?.url || "/home/carousel-4-min.png"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[4]?.url || "/home/carousel-5-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            <div className="bento-item bento-img bento-col-1 bento-row-1">
+              <img src={imgs[5]?.url || "/home/carousel-6-min.jpg"} alt="Event Highlight" />
+            </div>
+
+            {/* ASYMMETRIC VIDEOS */}
+            <div className="bento-item bento-vid bento-col-3 bento-row-2">
+               {vids[3] && <VideoCard vid={vids[3]} />}
+            </div>
+
+            <div className="bento-item bento-vid bento-col-1 bento-row-2">
+               {vids[4] && <VideoCard vid={vids[4]} />}
+            </div>
+
+            <div className="bento-item bento-img bento-col-4 bento-row-1">
+              <img src={imgs[1]?.url || "/home/carousel-1-min.jpg"} alt="Stage Highlights" />
             </div>
 
           </div>

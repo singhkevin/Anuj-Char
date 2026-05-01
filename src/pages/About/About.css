@@ -247,7 +247,7 @@
   }
 
   /* Reset spans for smaller screens */
-  .bento-col-2 {
+  .bento-col-2, .bento-col-3 {
     grid-column: span 2; 
   }
   
