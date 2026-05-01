@@ -101,6 +101,11 @@
   color: var(--bg);
   opacity: 0.8;
   line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.bento-bio p:last-child {
+  margin-bottom: 0;
 }
 
 /* EXPERTISE BLOCK */
@@ -151,6 +156,43 @@
 /* VIDEO BLOCKS */
 .bento-vid {
   padding: 0; /* Remove padding for video cards */
+}
+
+/* NEW CONTENT BLOCKS */
+.bento-stars,
+.bento-inspiration {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3em;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: all 0.4s ease;
+}
+
+.bento-stars:hover,
+.bento-inspiration:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.bento-stars h4,
+.bento-inspiration h4 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg);
+  margin-bottom: 1em;
+  opacity: 0.6;
+}
+
+.bento-stars p,
+.bento-inspiration p {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--fg);
+  opacity: 0.9;
 }
 
 .bento-video {
