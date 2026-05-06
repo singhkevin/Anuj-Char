@@ -2,7 +2,7 @@ const eventDetails = {
     "weddings-and-social-events": {
         title: "Weddings & Social Events",
         subtitle: "Creating Timeless Celebrations",
-        cover: "/home/wedding-cover.jpg",
+        cover: "/home/weddings-cover.jpg",
         description: "From the grand romance of weddings to the high energy of social gatherings, I bring a unique blend of elegance and excitement to every celebration. Whether it's a couple's big day or a milestone party, I ensure every moment is filled with joy, connection, and unforgettable memories.",
         images: [
             "/events/weddings/1.jpg",
