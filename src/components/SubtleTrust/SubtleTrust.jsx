@@ -14,6 +14,10 @@ const SubtleTrust = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const half = Math.ceil(celebrities.length / 2);
+    const row1 = celebrities.slice(0, half);
+    const row2 = celebrities.slice(half);
+
     return (
         <section className="subtle-trust-section">
             <div className="subtle-trust-header">
@@ -21,16 +25,35 @@ const SubtleTrust = () => {
                 <p>Moments of connection and energy, captured across diverse stages.</p>
             </div>
 
-            <div className="marquee-wrapper">
-                <div className="marquee-track">
-                    {[...celebrities, ...celebrities].map((celeb, index) => (
-                        <div className="subtle-trust-card" key={`${celeb.id}-${index}`}>
-                            <div className="image-container">
-                                <img src={celeb.image} alt={celeb.name || "Celebrity"} />
-                                <div className="soft-overlay"></div>
+            <div className="marquees-container">
+                <div className="marquee-wrapper">
+                    <div className="marquee-track">
+                        {[...row1, ...row1].map((celeb, index) => (
+                            <div className="subtle-trust-card" key={`${celeb.id}-${index}`}>
+                                <div className="image-container">
+                                    <img src={celeb.image} alt={celeb.name || "Celebrity"} />
+                                    <div className="soft-overlay">
+                                        <span>{celeb.name || `Moment ${celeb.id}`}</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                </div>
+
+                <div className="marquee-wrapper">
+                    <div className="marquee-track reverse">
+                        {[...row2, ...row2].map((celeb, index) => (
+                            <div className="subtle-trust-card" key={`${celeb.id}-${index}`}>
+                                <div className="image-container">
+                                    <img src={celeb.image} alt={celeb.name || "Celebrity"} />
+                                    <div className="soft-overlay">
+                                        <span>{celeb.name || `Moment ${celeb.id}`}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

@@ -34,7 +34,7 @@ const Events = () => {
                         {categories.map((category) => (
                             <Link to={`/events/${category.id}`} key={category.id} className="event-card">
                                 <div className="event-card-image">
-                                    <img src={category.images[0]} alt={category.title} />
+                                    <img src={category.cover || category.images[0]} alt={category.title} />
                                     <div className="event-card-overlay">
                                         <FiArrowUpRight className="overlay-icon" />
                                     </div>
