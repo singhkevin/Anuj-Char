@@ -19,6 +19,13 @@ const Events = () => {
     return (
         <ReactLenis root>
             <div className="events-hub-page">
+                <style>{`
+                    @media (max-width: 768px) {
+                        .events-hero {
+                            padding-top: 160px !important;
+                        }
+                    }
+                `}</style>
                 <div className="events-hero">
                     <div className="events-hero-content">
                         <AnimatedCopy tag="h1">The Stage<br></br> is Set</AnimatedCopy>

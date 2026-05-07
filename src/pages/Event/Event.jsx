@@ -83,6 +83,13 @@ const Event = () => {
         <ReactLenis root>
             <ScrollFix />
             <div className="event-page">
+                <style>{`
+                    @media (max-width: 768px) {
+                        .event-hero {
+                            padding-top: 160px !important;
+                        }
+                    }
+                `}</style>
                 <div className="event-hero">
                     <div className="event-hero-content">
                         <AnimatedCopy tag="h1">{event.title}</AnimatedCopy>

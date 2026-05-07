@@ -53,6 +53,13 @@ const Gallery = () => {
     return (
         <ReactLenis root>
             <div className="gallery-page">
+                <style>{`
+                    @media (max-width: 768px) {
+                        .gallery-hero {
+                            padding-top: 160px !important;
+                        }
+                    }
+                `}</style>
                 <section className="gallery-hero">
                     <div className="hero-content">
                         <AnimatedCopy tag="h1">Gallery</AnimatedCopy>
