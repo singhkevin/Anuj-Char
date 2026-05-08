@@ -144,7 +144,7 @@ const Menu = () => {
           </div>
         </div>
       </div>
-      <div className="menu">
+      <div className={`menu ${isMenuOpen ? "menu-open" : ""}`}>
         <div className="menu-col">
           <div className="menu-sub-col">
             <div className="menu-links">

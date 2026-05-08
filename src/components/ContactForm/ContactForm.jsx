@@ -26,7 +26,6 @@ const ContactForm = () => {
 
           <div className="contact-form-availability">
             <p className="primary sm">Taking up projects WORLDWIDE</p>
-            <p className="primary sm">Clients worldwide</p>
           </div>
 
           <div style={{ display: "flex", gap: "1em", marginTop: "1em", flexWrap: "wrap" }}>

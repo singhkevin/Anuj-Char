@@ -10,48 +10,11 @@ import "swiper/css/navigation";
 
 import "./ModernCarousel.css";
 
-const slides = [
-    {
-        id: 1,
-        image: "/home/carousel-4-min.png",
-        title: "Cricket Event with Harsha Bhogle",
-    },
-    {
-        id: 2,
-        image: "/home/carousel-2-min.jpg",
-        title: "Flim Night Event with Mandira Bedi",
-    },
-    {
-        id: 3,
-        image: "/home/carousel-3-min.jpg",
-        title: "The Times of India Business Award",
-    },
-    {
-        id: 4,
-        image: "/home/carousel-1-min.jpg",
-        title: "Times Leader of Tommorrow Event",
-    },
-    {
-        id: 5,
-        image: "/home/carousel-5-min.jpg",
-        title: "Qualcomm Event",
-    },
-    {
-        id: 6,
-        image: "/home/carousel-6-min.jpg",
-        title: "Anchoring at Qualcomm Event",
-    },
-    {
-        id: 7,
-        image: "/home/carousel-7-min.jpg",
-        title: "FliKart Edge Event",
-    },
-    {
-        id: 8,
-        image: "/home/carousel-8-min.jpg",
-        title: "Times's Leaders of Tomorrow",
-    }
-];
+const slides = Array.from({ length: 21 }, (_, i) => ({
+    id: i + 1,
+    image: `/moments-captured/${i + 1}.jpg`,
+    title: "Moments Captured",
+}));
 
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";

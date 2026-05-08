@@ -69,7 +69,7 @@ const VideoCard = ({ vid, isBento = true }) => {
 const About = () => {
   const imgs = galleryData.images;
   const vids = galleryData.videos;
-  const newImage = "/about-assets/IMG-20230321-WA0027(1).jpg";
+  const newImage = "/about-assets/3.jpg";
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -125,7 +125,7 @@ const About = () => {
             </div>
 
             <div className="bento-item bento-img bento-col-1 bento-row-1">
-              <img src={imgs[0]?.url || "/home/hero-img2.jpg"} alt="Stage Presence" />
+              <img src="/about-assets/20.jpg" alt="Stage Presence" />
             </div>
 
             <div className="bento-item bento-expertise bento-col-1 bento-row-1">
