@@ -6,7 +6,7 @@ const ContactForm = () => {
     <div className="contact-form">
       <div className="contact-form-row">
         <div className="contact-form-row-copy-item">
-          <p className="primary sm">Let’s create together</p>
+          <p className="primary sm"></p>
         </div>
         <div className="contact-form-row-copy-item"></div>
         <div className="contact-form-row-copy-item">

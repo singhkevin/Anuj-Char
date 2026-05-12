@@ -225,7 +225,7 @@ const About = () => {
             </div>
 
             <div className="bento-item bento-img bento-col-4 bento-row-1">
-              <img src={imgs[1]?.url || "/home/carousel-1-min.jpg"} alt="Stage Highlights" />
+              <img src={"home/about-end.jpg"} alt="Stage Highlights" style={{ objectPosition: 'top' }} />
             </div>
 
           </div>
