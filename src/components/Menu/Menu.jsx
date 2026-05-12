@@ -91,32 +91,48 @@ const Menu = () => {
   }, []);
 
   useEffect(() => {
-    gsap.set(".menu-link-item-holder", { y: 125 });
+    let ctx = gsap.context(() => {
+      gsap.set(".menu-link-item-holder", { y: 125 });
+      gsap.set(".menu", { autoAlpha: 0, clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" });
 
-    menuAnimation.current = gsap.timeline({ paused: true }).to(".menu", {
-      duration: 1,
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      ease: "power4.inOut",
+      menuAnimation.current = gsap.timeline({ paused: true }).fromTo(".menu", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        autoAlpha: 0,
+      }, {
+        duration: 1,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        autoAlpha: 1,
+        ease: "power4.inOut",
+      });
+
+      menuLinksAnimation.current = gsap
+        .timeline({ paused: true })
+        .to(".menu-link-item-holder", {
+          y: 0,
+          duration: 1.25,
+          stagger: 0.075,
+          ease: "power3.inOut",
+          delay: 0.125,
+        });
     });
 
-    menuLinksAnimation.current = gsap
-      .timeline({ paused: true })
-      .to(".menu-link-item-holder", {
-        y: 0,
-        duration: 1.25,
-        stagger: 0.075,
-        ease: "power3.inOut",
-        delay: 0.125,
-      });
+    return () => ctx.revert();
   }, [windowWidth]);
 
+  const prevIsMenuOpen = useRef(isMenuOpen);
+
   useEffect(() => {
-    if (isMenuOpen) {
-      menuAnimation.current.play();
-      menuLinksAnimation.current.play();
-    } else {
-      menuAnimation.current.reverse();
-      menuLinksAnimation.current.reverse();
+    if (!menuAnimation.current || !menuLinksAnimation.current) return;
+    
+    if (prevIsMenuOpen.current !== isMenuOpen) {
+      if (isMenuOpen) {
+        menuAnimation.current.play();
+        menuLinksAnimation.current.play();
+      } else {
+        menuAnimation.current.reverse();
+        menuLinksAnimation.current.reverse();
+      }
+      prevIsMenuOpen.current = isMenuOpen;
     }
   }, [isMenuOpen]);
 

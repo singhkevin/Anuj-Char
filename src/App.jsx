@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Menu from "./components/Menu/Menu";
 import Background from "./components/Background/Background";
@@ -15,6 +15,8 @@ import Events from "./pages/Events/Events";
 import Event from "./pages/Event/Event";
 
 import { AnimatePresence } from "framer-motion";
+import Preloader from "./components/Preloader/Preloader";
+import gsap from "gsap";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -30,9 +32,39 @@ function ScrollToTop() {
 
 function App() {
   const location = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Pause all GSAP animations initially
+    gsap.globalTimeline.pause();
+
+    const handleLoad = () => {
+      // Small delay to ensure smooth transition after everything is parsed
+      setTimeout(() => {
+        setIsLoading(false);
+        // Play animations slightly after the preloader starts to fade out
+        setTimeout(() => {
+          gsap.globalTimeline.play();
+        }, 500);
+      }, 800);
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      // Fallback timeout
+      const fallbackTimer = setTimeout(handleLoad, 3000);
+      return () => {
+        window.removeEventListener("load", handleLoad);
+        clearTimeout(fallbackTimer);
+      };
+    }
+  }, []);
 
   return (
     <>
+      <Preloader isLoading={isLoading} />
       <ScrollToTop />
       <Background />
       <Menu />
