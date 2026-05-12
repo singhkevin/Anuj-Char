@@ -297,7 +297,6 @@ const Home = () => {
           </div>
           <div className="sticky-titles-footer">
             <p className="primary sm">Captivating audiences, one moment at a time.</p>
-            <p className="primary sm">Open to Collaborations</p>
           </div>
 
           <model-viewer
