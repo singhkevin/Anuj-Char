@@ -242,7 +242,7 @@
 
 @media (max-width: 768px) {
     .gallery-section {
-        padding: 5em 2em;
+        padding: 2.5em 1.5em;
     }
 
     .image-grid {
@@ -255,6 +255,6 @@
     }
 
     .gallery-hero {
-        height: 50svh;
+        padding-bottom: 2em;
     }
 }

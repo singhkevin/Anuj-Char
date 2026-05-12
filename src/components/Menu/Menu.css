@@ -220,19 +220,33 @@
   pointer-events: auto;
 }
 
+.menu-col {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .menu-sub-col {
   width: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 80px 0; /* Add padding to prevent clipping on small heights */
+  padding: 120px 0 0 0;
+}
+
+.menu-links {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .menu-link-item {
   position: relative;
-  padding: 1em 0 0.125em 0;
+  padding: clamp(0.5rem, 1.5vh, 1.5rem) 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   text-align: center;
   pointer-events: all;
@@ -247,15 +261,71 @@
   position: relative;
   color: #fff;
   font-family: "BankGothic";
-  font-size: 7vw;
+  font-size: clamp(2.4rem, 12vw, 13vh);
   text-transform: uppercase;
   letter-spacing: -0.01em;
   line-height: 80%;
   transition: color 0.3s;
 }
 
+.menu-socials {
+  flex: 0 0 15vh;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-social-item {
+  padding: 0;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  text-align: center;
+  pointer-events: all;
+}
+
+.menu-social-item .menu-link-item-holder {
+  position: relative;
+  will-change: transform;
+}
+
+.menu-social-item .menu-link-item-holder a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.menu-social-item .menu-link-item-holder:hover a {
+  color: #cccccc;
+}
+
 .menu-link-item .menu-link-item-holder:hover a {
   color: #cccccc;
+}
+
+@media (max-height: 700px) {
+  .menu-logo {
+    top: 1.25em;
+    left: 1.25em;
+    padding: 0.4em 1.25em;
+  }
+  .menu-logo-img {
+    height: 55px;
+  }
+  .menu-toggle {
+    top: 1.25em;
+    right: 1.25em;
+    width: 50px;
+    height: 50px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -280,6 +350,49 @@
   }
 
   .menu-link-item .menu-link-item-holder a {
-    font-size: 12.8vw;
+    font-size: clamp(2rem, 10vw, 11vh);
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-link-item .menu-link-item-holder a {
+    font-size: clamp(1.8rem, 14vw, 10vh);
+  }
+}
+
+/* Height based responsiveness to keep menu items visible on one page */
+@media (max-height: 850px) {
+  .menu-sub-col {
+    padding: 100px 0 0 0;
+  }
+  .menu-link-item {
+    padding: 0.5em 0 0.05em 0;
+  }
+}
+
+@media (max-height: 700px) {
+  .menu-sub-col {
+    padding: 80px 0 0 0;
+  }
+  .menu-link-item {
+    padding: 0.35em 0 0.05em 0;
+  }
+  .menu-socials {
+    gap: 1.5em;
+  }
+}
+
+@media (max-height: 550px) {
+  .menu-sub-col {
+    padding: 60px 0 0 0;
+  }
+  .menu-link-item {
+    padding: 0.25em 0 0.05em 0;
+  }
+  .menu-socials {
+    gap: 1.25em;
+  }
+  .menu-link-item .menu-link-item-holder a {
+    font-size: clamp(1.2rem, 8vmin, 10vh);
   }
 }

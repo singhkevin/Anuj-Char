@@ -15,55 +15,55 @@ import galleryData from "../../data/galleryData";
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollFix = () => {
-    useLenis(({ isScrolling }) => {
-        if (isScrolling) {
-            document.body.classList.add("is-scrolling");
-        } else {
-            document.body.classList.remove("is-scrolling");
-        }
-    });
-    return null;
+  useLenis(({ isScrolling }) => {
+    if (isScrolling) {
+      document.body.classList.add("is-scrolling");
+    } else {
+      document.body.classList.remove("is-scrolling");
+    }
+  });
+  return null;
 };
 
 const VideoCard = ({ vid, isBento = true }) => {
-    const [isPlaying, setIsPlaying] = React.useState(false);
+  const [isPlaying, setIsPlaying] = React.useState(false);
 
-    const getYouTubeId = (url) => {
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-        const match = url.match(regExp);
-        return (match && match[2].length === 11) ? match[2] : null;
-    };
+  const getYouTubeId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
 
-    const videoId = getYouTubeId(vid.url);
-    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const videoId = getYouTubeId(vid.url);
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
-    return (
-        <div className={`video-item ${isPlaying ? 'is-playing' : ''} ${isBento ? 'bento-video' : ''}`}>
-            <div className="video-wrapper" onClick={() => setIsPlaying(true)}>
-                {!isPlaying ? (
-                    <div className="video-custom-overlay">
-                        <img src={thumbnailUrl} alt={vid.title} className="video-thumb" />
-                        <div className="overlay-content">
-                            <div className="play-button">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 6L17 12L7 18V6Z" fill="currentColor" />
-                                </svg>
-                            </div>
-                            <h3>{vid.title}</h3>
-                        </div>
-                    </div>
-                ) : (
-                    <iframe
-                        src={`${vid.url}${vid.url.includes('?') ? '&' : '?'}autoplay=1`}
-                        title={vid.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                    ></iframe>
-                )}
+  return (
+    <div className={`video-item ${isPlaying ? 'is-playing' : ''} ${isBento ? 'bento-video' : ''}`}>
+      <div className="video-wrapper" onClick={() => setIsPlaying(true)}>
+        {!isPlaying ? (
+          <div className="video-custom-overlay">
+            <img src={thumbnailUrl} alt={vid.title} className="video-thumb" />
+            <div className="overlay-content">
+              <div className="play-button">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 6L17 12L7 18V6Z" fill="currentColor" />
+                </svg>
+              </div>
+              <h3>{vid.title}</h3>
             </div>
-        </div>
-    );
+          </div>
+        ) : (
+          <iframe
+            src={`${vid.url}${vid.url.includes('?') ? '&' : '?'}autoplay=1`}
+            title={vid.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        )}
+      </div>
+    </div>
+  );
 };
 
 const About = () => {
@@ -113,14 +113,16 @@ const About = () => {
 
         <section className="bento-container">
           <div className="bento-grid">
-            
+
             {/* ROW 1 & 2: PRIMARY INTRO */}
             <div className="bento-item bento-bio bento-col-3 bento-row-2">
               <AnimatedCopy tag="h3">
                 International, award-winning, multi-lingual host.
               </AnimatedCopy>
               <p>
-                With an uncanny ability to captivate audiences, Anuj brings energy, charisma, and unmatched professionalism to every stage. From grand corporate summits to intimate social gatherings.
+                Anuj Char is a professional emcee, anchor and event host based in Bengaluru and Mumbai. He has hosted over a 1000 shows nationally and internationally in his career which spans 10 years! The stage is his second home and he eats, sleeps and breathes events. Having hosted a varied genre of events, his repertoire includes award nights, gala dinners, product launches, conferences, music concerts, weddings, team building sessions, fashion shows and parties. He also is a prominent face in the world of theater, TV commercials and also performs many voice-overs.
+                Showing his audience a good time at every event gives him utmost satisfaction and shaking a leg with Bollywood superstars like Amitabh Bachchan, Vidya Balan, Anil Kapoor, Kunal Kapoor, Chitrangadha Singh, Anupam Kher, Raveena Tandon, Kiara Advani and many others are perks of the job that he truly enjoys. Anuj Char fluency in multiple languages coupled with his strong on-stage and on-camera presence has won audience’s hearts worldwide! Striking the right balance between work and fun is the key to his success which has seen him perform on some of the biggest stages across the globe.
+                Being a huge Shah Rukh Khan fan, he takes inspiration from King Khan himself and would love to host a show with his mentor anytime the opportunity comes knocking and hey, some dreams do come true so watch this space.
               </p>
             </div>
 
@@ -186,7 +188,7 @@ const About = () => {
 
             {/* ADDITIONAL HIGHLIGHTS */}
             <div className="bento-item bento-vid bento-col-2 bento-row-1">
-               {vids[1] && <VideoCard vid={vids[1]} />}
+              {vids[1] && <VideoCard vid={vids[1]} />}
             </div>
 
             <div className="bento-item bento-img bento-col-1 bento-row-1">
@@ -215,11 +217,11 @@ const About = () => {
 
             {/* ASYMMETRIC VIDEOS */}
             <div className="bento-item bento-vid bento-col-3 bento-row-2">
-               {vids[3] && <VideoCard vid={vids[3]} />}
+              {vids[3] && <VideoCard vid={vids[3]} />}
             </div>
 
             <div className="bento-item bento-vid bento-col-1 bento-row-2">
-               {vids[4] && <VideoCard vid={vids[4]} />}
+              {vids[4] && <VideoCard vid={vids[4]} />}
             </div>
 
             <div className="bento-item bento-img bento-col-4 bento-row-1">
