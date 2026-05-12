@@ -20,7 +20,7 @@ const ContactForm = () => {
             <h3>Award-Winning Energy</h3>
 
             <p>
-              Planning an event or show? Let’s make it unforgettable. I’d love to hear your vision and explore how we can work together.
+              Planning an event or show? Let’s make it unforgettable! I’d love to hear your vision and explore how we can work together.
             </p>
           </div>
 
