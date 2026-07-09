@@ -7,7 +7,6 @@ const HeroImg = "/home/hero-img2.jpg"
 
 import AnimatedCopy from "../../components/AnimatedCopy/AnimatedCopy";
 import Reviews from "../../components/Reviews/Reviews";
-import ContactForm from "../../components/ContactForm/ContactForm";
 import Footer from "../../components/Footer/Footer";
 import SubtleTrust from "../../components/SubtleTrust/SubtleTrust";
 
@@ -312,9 +311,10 @@ const Home = () => {
             shadow-softness="0.9"
           ></model-viewer>
           <h2 ref={(el) => (titlesRef.current[0] = el)}>
-            I am an International, award-winning, multi-lingual host that </h2>
+            Welcome to my creative space and journey.
+          </h2>
           <h2 ref={(el) => (titlesRef.current[1] = el)}>
-            captivates audiences attention with energy and charisma!
+            I am an International, award-winning, multi-lingual host
           </h2>
           <h2 ref={(el) => (titlesRef.current[2] = el)}>
             This portfolio is a glimpse into my world!
@@ -344,15 +344,11 @@ const Home = () => {
         <section ref={homeWorkRef} className="home-work">
 
           <div className="home-work-list">
-            {workItems.map((work, index) => (
+            {workItems.map((work) => (
               <div
                 key={work.id}
                 className="home-work-item"
               >
-                <p className="primary sm">{`${String(index + 1).padStart(
-                  2,
-                  "0"
-                )} - ${String(workItems.length).padStart(2, "0")}`}</p>
                 <h3>{work.title}</h3>
                 <div className="work-item-img">
                   <iframe
@@ -364,7 +360,6 @@ const Home = () => {
                     allowFullScreen
                   />
                 </div>
-                <h4>{work.category}</h4>
               </div>
             ))}
           </div>
@@ -420,7 +415,6 @@ const Home = () => {
         </section>
 
 
-        <ContactForm />
         <Footer />
       </div>
     </ReactLenis >

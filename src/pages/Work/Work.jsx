@@ -5,7 +5,7 @@ import "./Work.css";
 
 import { gsap } from "gsap";
 
-import ContactForm from "../../components/ContactForm/ContactForm";
+
 import Footer from "../../components/Footer/Footer";
 import ReactLenis from "lenis/react";
 
@@ -175,7 +175,7 @@ const Work = () => {
           </div>
         </div>
 
-        <ContactForm />
+
         <Footer />
       </div>
     </ReactLenis>

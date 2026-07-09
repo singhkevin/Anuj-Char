@@ -116,7 +116,7 @@ const galleryData = {
         {
             id: 8,
             url: "https://www.youtube.com/embed/c7akZOWneyc",
-            title: "RCB Event"
+            title: "IPL event for RCB"
         }
     ]
 };

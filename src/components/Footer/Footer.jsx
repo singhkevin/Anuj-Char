@@ -5,54 +5,66 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="footer-row">
-        <div className="footer-contact">
-          <h3>
-            Let’s Collaborate <br />
-            <a href="mailto:mc@anujchar.com" style={{ color: "inherit", textDecoration: "none" }}>mc@anujchar.com</a>
-          </h3>
+    <div className="footer merged">
+      <div className="footer-merged-container">
+        <div className="footer-merged-row">
+          <div className="footer-merged-left">
+            <h3>
+              Let’s Collaborate <br />
+              <a href="mailto:mc@anujchar.com" className="footer-email-link">mc@anujchar.com</a>
+            </h3>
 
-          <p className="secondary">
-            From live shows to digital broadcasts — I’m always ready to collaborate. Let’s create something unforgettable.
-          </p>
+            <p className="secondary">
+              From live shows to digital broadcasts — I’m always ready to collaborate. Let’s create something unforgettable.
+            </p>
 
-          <Link to="/contact" className="btn">
-            Get in Touch
-          </Link>
-        </div>
+            <div className="footer-pills-container">
+              <Link to="/" className="footer-pill">
+                <span>Home</span>
+                <span>&#8594;</span>
+              </Link>
 
-        <div className="footer-nav">
-          <Link to="/" className="footer-nav-item">
-            <span>Home</span>
-            <span>&#8594;</span>
-          </Link>
+              <Link to="/events" className="footer-pill">
+                <span>Events</span>
+                <span>&#8594;</span>
+              </Link>
 
-          <Link to="/events" className="footer-nav-item">
-            <span>Events</span>
-            <span>&#8594;</span>
-          </Link>
+              <Link to="/contact" className="footer-pill">
+                <span>Contact</span>
+                <span>&#8594;</span>
+              </Link>
 
-          <Link to="/contact" className="footer-nav-item">
-            <span>Contact</span>
-            <span>&#8594;</span>
-          </Link>
+              <a href="https://www.instagram.com/anujchar/" target="_blank" rel="noreferrer" className="footer-pill">
+                <span>Instagram</span>
+                <span>&#8599;</span>
+              </a>
 
-          <a href="https://www.instagram.com/anujchar/" target="_blank" rel="noreferrer" className="footer-nav-item">
-            <span>Instagram</span>
-            <span>&#8599;</span>
-          </a>
+              <a href="https://www.youtube.com/@AnujChar" target="_blank" rel="noreferrer" className="footer-pill">
+                <span>YouTube</span>
+                <span>&#8599;</span>
+              </a>
+            </div>
+          </div>
 
-          <a href="https://www.youtube.com/@AnujChar" target="_blank" rel="noreferrer" className="footer-nav-item">
-            <span>YouTube</span>
-            <span>&#8599;</span>
-          </a>
-        </div>
-      </div>
-      <div className="footer-row" id="footer-row-bottom">
-        <div className="footer-header">
-          <h1 className="footer-row-bottom-title">Anuj</h1>
-          <h1 className="footer-row-bottom-title">Char</h1>
+          <div className="footer-merged-right">
+            <div className="footer-form">
+              <div className="form-item">
+                <input type="text" placeholder="Name" />
+              </div>
+
+              <div className="form-item">
+                <input type="text" placeholder="Email" />
+              </div>
+
+              <div className="form-item">
+                <textarea rows={4} placeholder="Message" />
+              </div>
+
+              <div className="form-item">
+                <button className="btn">Send Message</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="footer-copyright-line">

@@ -2,7 +2,7 @@ import React from "react";
 import "./Gallery.css";
 import galleryData from "../../data/galleryData";
 import AnimatedCopy from "../../components/AnimatedCopy/AnimatedCopy";
-import ContactForm from "../../components/ContactForm/ContactForm";
+
 import Footer from "../../components/Footer/Footer";
 import ReactLenis from "lenis/react";
 import Transition from "../../components/Transition/Transition";
@@ -50,9 +50,22 @@ const VideoCard = ({ vid }) => {
 };
 
 const Gallery = () => {
+    const [selectedImage, setSelectedImage] = React.useState(null);
+    const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
+    const [hoverState, setHoverState] = React.useState('none'); // 'none', 'in', 'out'
+    
+    const handleMouseMove = (e) => {
+        setCursorPos({ x: e.clientX, y: e.clientY });
+    };
+
+    const activeCursor = selectedImage ? 'out' : hoverState;
+
     return (
         <ReactLenis root>
-            <div className="gallery-page">
+            <div 
+                className={`gallery-page ${activeCursor !== 'none' ? 'hide-native-cursor' : ''}`} 
+                onMouseMove={handleMouseMove}
+            >
                 <style>{`
                     @media (max-width: 768px) {
                         .gallery-hero {
@@ -74,12 +87,15 @@ const Gallery = () => {
                     </div>
                     <div className="image-grid">
                         {galleryData.images.map((img) => (
-                            <div key={img.id} className="image-item">
+                            <div 
+                                key={img.id} 
+                                className="image-item" 
+                                onClick={() => setSelectedImage(img)}
+                                onMouseEnter={() => setHoverState('in')}
+                                onMouseLeave={() => setHoverState('none')}
+                            >
                                 <div className="image-wrapper">
                                     <img src={img.url} alt={img.title} />
-                                    <div className="image-overlay">
-                                        <span>{img.title}</span>
-                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -88,7 +104,7 @@ const Gallery = () => {
 
                 <section className="gallery-section">
                     <div className="section-header">
-                        <AnimatedCopy tag="h2">Dynamic Energy</AnimatedCopy>
+                        <AnimatedCopy tag="h2">Videos</AnimatedCopy>
                         <div className="header-line"></div>
                     </div>
                     <div className="video-grid">
@@ -98,8 +114,35 @@ const Gallery = () => {
                     </div>
                 </section>
 
-                <ContactForm />
+
                 <Footer />
+                
+                {/* Custom Magnifier Cursor */}
+                <div 
+                    className={`custom-magnifier ${activeCursor !== 'none' ? 'visible' : ''}`}
+                    style={{
+                        left: `${cursorPos.x}px`,
+                        top: `${cursorPos.y}px`
+                    }}
+                >
+                    {activeCursor === 'in' ? (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                        </svg>
+                    ) : (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM13.5 10.5h-6" />
+                        </svg>
+                    )}
+                </div>
+                
+                {selectedImage && (
+                    <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+                        <div className="lightbox-content">
+                            <img src={selectedImage.url} alt={selectedImage.title} />
+                        </div>
+                    </div>
+                )}
             </div>
         </ReactLenis>
     );

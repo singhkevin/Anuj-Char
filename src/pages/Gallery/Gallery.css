@@ -4,6 +4,12 @@
     background: transparent;
 }
 
+/* Hide OS cursor globally when custom cursor is active */
+.gallery-page.hide-native-cursor,
+.gallery-page.hide-native-cursor * {
+    cursor: none !important;
+}
+
 /* Hero Section */
 .gallery-hero {
     padding: 3em 2em;
@@ -64,8 +70,9 @@
 /* Image Grid */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 2.5em;
+    align-items: center;
+    cursor: none;
 }
 
 .image-item {
@@ -73,10 +80,17 @@
     overflow: hidden;
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     background: #f0f0f0;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1;
+    will-change: transform, opacity, box-shadow, filter;
+    transition: transform 0.4s ease,
+                opacity 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease,
+                filter 0.4s ease;
 }
 
 .image-wrapper {
@@ -89,41 +103,102 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.6s ease;
 }
 
-.image-overlay {
-    position: absolute;
+/* Subtle hover effect indicating clickability */
+.image-item:hover {
+    opacity: 1;
+    z-index: 10;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom Magnifier Cursor */
+.custom-magnifier {
+    position: fixed;
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 9999;
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    opacity: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.custom-magnifier.visible {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.custom-magnifier svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+/* Lightbox Styles */
+.lightbox-overlay {
+    position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: all 0.4s ease;
+    animation: fadeIn 0.3s forwards ease;
+    backdrop-filter: blur(10px);
 }
 
-.image-overlay span {
-    color: white;
-    font-family: 'BankGothic', sans-serif;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.image-item:hover img {
-    transform: scale(1.1);
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
-.image-item:hover .image-overlay {
-    opacity: 1;
+
+
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
-.image-item:hover .image-overlay span {
-    transform: translateY(0);
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Desktop: Stable 3-column layout */
+@media (min-width: 1201px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Video Grid */
@@ -234,7 +309,7 @@
 /* Removed redundant video heading */
 
 /* Responsiveness */
-@media (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1200px) {
     .image-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -247,6 +322,11 @@
 
     .image-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile (Single column): keep the subtle lift */
+    .image-item:hover {
+        transform: translateY(-10px) scale(1.02);
     }
 
     .video-grid {

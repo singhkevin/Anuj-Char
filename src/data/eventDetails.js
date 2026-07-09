@@ -71,7 +71,7 @@ const eventDetails = {
             "/event-assets/sports/11.jpg",
         ],
         videos: [
-            { id: 8, url: "https://www.youtube.com/embed/c7akZOWneyc", title: "RCB Event Highlights" }
+            { id: 8, url: "https://www.youtube.com/embed/c7akZOWneyc", title: "IPL event for RCB Highlights" }
         ]
     },
     "voices": {

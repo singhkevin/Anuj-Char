@@ -43,7 +43,7 @@ const workList = [
   },
   {
     id: 8,
-    title: "RCB Event",
+    title: "IPL event for RCB",
     category: "Corporate Event",
     image: "https://www.youtube.com/embed/c7akZOWneyc",
   },

@@ -55,9 +55,6 @@ const ModernCarousel = () => {
                         {({ isActive }) => (
                             <div className={`slide-content ${isActive ? 'modern-slide-active' : ''}`}>
                                 <img src={slide.image} alt={slide.title} />
-                                <div className="slide-overlay">
-                                    <h3>{slide.title}</h3>
-                                </div>
                             </div>
                         )}
                     </SwiperSlide>

@@ -93,7 +93,6 @@ const Event = () => {
                 <div className="event-hero">
                     <div className="event-hero-content">
                         <AnimatedCopy tag="h1">{event.title}</AnimatedCopy>
-                        <AnimatedCopy tag="h2">{event.subtitle}</AnimatedCopy>
                     </div>
                 </div>
 
@@ -103,9 +102,6 @@ const Event = () => {
                             <div key={index} className="event-grid-item">
                                 <div className="event-grid-image">
                                     <img src={img} alt={`${event.title} ${index + 1}`} />
-                                    <div className="image-hover-overlay">
-                                        <span className="view-text">Moment {index + 1}</span>
-                                    </div>
                                 </div>
                             </div>
                         ))}

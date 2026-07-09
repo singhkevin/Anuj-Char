@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis, { useLenis } from "lenis/react";
 
 import AnimatedCopy from "../../components/AnimatedCopy/AnimatedCopy";
-import ContactForm from "../../components/ContactForm/ContactForm";
+
 import Footer from "../../components/Footer/Footer";
 import Transition from "../../components/Transition/Transition";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -231,7 +231,7 @@ const About = () => {
           </div>
         </section>
 
-        <ContactForm />
+
         <Footer />
       </div>
     </ReactLenis>
